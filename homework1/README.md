@@ -34,6 +34,8 @@ help(package='ggplot2')
 
 One of the coolest features of R in the last five years or so has been the ease of using markdown.  The Rmarkdown package allows you to write documents that intersperse your prose and your code.  When you run the document, the code is run, and the answers, tables, and plots are inserted into your document.  It's really slick.  It guarantees that the numbers in the text actually are what comes from the data.  No more copy and paste errors. Here is a really good blog post that [shows off some of what Rmarkdown can do](http://jeromyanglim.blogspot.com/2012/05/getting-started-with-r-markdown-knitr.html).  There is a lot more you can do... you can write presentations, papers, include references, etc.  My last few papers have been written using Rmarkdown.
 
+The packages that actually do the R <-> markdown integration are called `knitr` and `rmarkdown`.  These are largely hidden from you in Rstudio, and that's okay.
+
 We'll get our hands dirty with Rmarkdown in a bit.
 
 ## The packrat package
