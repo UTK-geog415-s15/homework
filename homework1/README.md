@@ -45,37 +45,4 @@ packrat is a new package I am just learning about.  One of the problems with R (
 Are you ready to put all this together?
 
 
-# Assignment 1:
-
-
-### Create the project and initialize packrat
-
-1. In Rstudio, create a new project in the homework1 folder.  
-2. In the command console, install and initialize packrat
-```R
-install.packages('packrat')
-packrat::init() #The semicolon thing is weird, just accept it for now.
-```
-It'll look like it's doing something.
-
-### Create a markdown demo
-
-1. Click on `File -> New File -> R Markdown...`
-2. Give the document a name.  Note, this is the title of the document and **not** the file name.  Whatever you enter, you can change.  Make the output html for now.  (It's easy to change this later, and things are quicker with html)
-3. It'll create a small markdown file.  Notice how
- - there is a metadata section at the top that is separated by
- ```R
- ---
- Stuff
- ---
- ```
- Don't worry about that for now.
- - there are text sections, and
- - there are code sections, which are separated by
- ```R
- # R code here.
- ```
- 4. Click on `Knit html`
- Whoa.  That's pretty awesome, isn't it.
- 5. Inspect the markdown file for a minute.  First, let me note that `cars` is a simple dataset of car miles per gallon and car weight that comes out of the box with R.
- 6. For each command in the markdown file, enter that command to the command console.  Note how the output in the command console is what you see printed in the knitted html page.
+# Assignment 0:
