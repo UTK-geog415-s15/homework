@@ -80,7 +80,7 @@ Getting your hands dirty with data
 --------------------------------------------------------
 
 ### Getting the data into R.
-I've put in the repository some data that were collected in the 18th century by London physician John Arbuthonot to study the sex ratio (the ratio of males to females).  I've put the data in the homework1/data/ folder as a file called arbuthnot.csv.  .csv is the extension for comma separated file.  You can open the file in wordpad or textedit to see what it looks like.  It just a text file, with every data value separated by a comma.  Comma Separated Files are one of the most transparent ways to save and share data.  You can always export simpe spreadsheets  Excel as comma separated file.
+I've put some data in the repository that were collected in the 18th century by London physician John Arbuthnot to study the sex ratio (the ratio of males to females).  I've put the data in the homework1/data/ folder as a file called arbuthnot.csv.  .csv is the extension for comma separated file.  You can open the file in wordpad or textedit to see what it looks like.  It is just a text file, with every data value separated by a comma.  Comma Separated Files are one of the most transparent ways to save and share data.  You can always export simple spreadsheets from Excel as comma separated file.
 
 ```{r}
 # Based on where the repository is on my own computer, I enter
@@ -96,23 +96,24 @@ The `help()` function is the easiest way to get help in R on a function.  The on
 help(read.csv)
 ```
 
-You'll see that the help page has some standard sections.  There is a quick description of the function.  (In this case, you'll see that the help for `read.csv` is merged with the help for a few other functions as well.).  Following the Description is the Usage section, which lists all of the ways to use the function and all of the arguments that it can accept.  You'll see that read.csv can accept many many more arguments than we used.  Most arguments are optional.  Then you'll see a description of each argument, followed by some more Details about the function that are helpful to know.  Finally, at the very bottom of the help file are some Examples of the function in action.  You can learn a heck of a lot by looking at the examples.
+You'll see that the help page has some standard sections.  There is a quick description of the function.  (In this case, you'll see that the help for `read.csv` is merged with the help for a few other functions as well.)  Following the Description is the Usage section, which lists all of the ways to use the function and all of the arguments that it can accept.  You'll see that read.csv can accept many, many more arguments than we used.  Most arguments are optional.  Then you'll see a description of each argument, followed by some more Details about the function that are helpful to know.  Finally, at the very bottom of the help file are some Examples of the function in action.  You can learn a heck of a lot by looking at the examples.
 
-I will admit that the help is often difficult to understand.  The help files are meant to be thorough and complete.  Also, since there are thousands of user contributed packages, not all of the help files are equally good.  Some of them are downright terrible.  We're taught how to do data analysis, not to write a manual!  I will usually look at the help file first, and then follow that up by looking for help outside of R.
+I will admit that the help is often difficult to understand.  The help files are meant to be thorough and complete.  Also, since there are thousands of user contributed packages, not all of the help files are equally good.  Some of them are downright terrible.  We're taught how to do data analysis, not how to write a manual!  I will usually look at the help file first, and then follow that up by looking for help outside of R.
 
 #### Getting help outside of R.
 There are lots of resources in the internet for getting help with R.  I've put a page on the class webpage with links to many of these resources.
 
-The single most helpful place to get help, however, is by searching in www.stackoverflow.com.  stackoverflow is a webpage for users of all statistical languages.  You can ask questions, and people can answer them, and questions and answers get voted up or down by their usefulness.  But you almost never have to ask a question because someone else has already asked it.  In stackoverflow, you can search for all the questions aabout the R function read.csv by searching for:
+The single most helpful place to get help, however, is by searching in www.stackoverflow.com.  stackoverflow is a webpage for users of all computer languages.  You can ask questions, and people can answer them, and questions and answers get voted up or down by their usefulness.  But you almost never have to ask a question because someone else has already asked it.  In stackoverflow, you can search for all the questions aabout the R function read.csv by searching for:
 "[r] read.csv."  When I did this, there were only 4815 results.  Surely your question is in there somewhere.  When I get a funny error in R, I often just paste a portion of the error message in stackoverflow, and that nearly always brings something up.
 
-You can also search google, but it's a little hit or miss.  It's hard in google to search the letter R.  It's a shame that R didn't pick a more googlable name, but in R's defense, R was around long before google was.
+You can also search google, but it's a little hit or miss.  It's hard in google to search the letter R.  It's a shame that R didn't pick a more googlable name, but in R's defense, R was around a long before google was.
 
 
 ## Back to the data analysis
 
-Whenever I get data into R, I usually want to see what it is, especially if it is data that someone sent me (i.e. I didn't collecte the data myself).  This is my standard set of tools for getting to know a dataset.
+Whenever I get data into R, I usually want to see what they look like, especially if they are data that someone sent me (i.e. I didn't collect the data myself).  This is my standard set of tools for getting to know a dataset.
 ```{r}
+# Note, anything after a pound symbol # is a comment and is ignored by R
 dim(arbuthnot) # dimension of the data
 names(arbuthnot) # the column names
 head(arbuthnot) # the head (top) of the data
@@ -121,7 +122,7 @@ summary(arbuthnot) # a summary of a data.frame
 ```
 
 
-Each row of this data.frame contains the observations for one year.  For each year, we have the number of boys christened in London, the number of girls christened, and a few other things, such as the number of deaths from plague.  John Arbuthnot used these data to evaluate the hypothesis that boys and girls are born in equal proportions.  Arubuthnot found that there are more Males than Females, and attributes this to be a result the greater mortalith faced by young Males. In a nutshell, Arbuthnot assumes that the ratio ought to be 50:50, NS concludes that the only way there could be more Male births than Female births would be if there were a Divine Providence to make all the numbers work out so nicely.
+Each row of this data.frame contains the observations for one year.  For each year, we have the number of boys christened in London, the number of girls christened, and a few other things, such as the number of deaths from plague.  John Arbuthnot used these data to evaluate the hypothesis that boys and girls are born in equal proportions.  Arubuthnot found that there are more males than females, and attributes this to be a result of the greater mortality faced by young males. The greater number of Male births leads to a relatively even number of males and females by adulthood, and everything works out in the end. In a nutshell, Arbuthnot assumes that the ratio ought to be 50:50, and concludes that the only way there could be more male births than female births would be if there were a Divine Providence to make all the numbers work out so nicely in the end.
 
 [Questions: Why do you think that Arbuthnot collected data on christenings, rather than births?  Remember, this is 18th century London.  How would these data have been collected in 1710?  Do you think christening and births might be similar in 1710?  What about today?]
 
@@ -156,7 +157,7 @@ Here's another bit of notation: What if I only want the first five rows:
 arbuthnot[1:5,'Year']
 ```
 
-R also provide a pretty smart command called subset to select specific rows.  This will return all rows of the data in which Male births is 10% more than the Female Births
+R also provides a pretty smart command called subset to select specific rows.  This will return all rows of the data in which Male births is 10% more than the Female Births:
 ```{r}
 subset(arbuthnot, Males > 1.1*Females)
 ```
@@ -174,7 +175,7 @@ arbuthnot[, 3:4] # This is much less safe.  What if the data were rearranged?  T
 
 
 
-It's important that you become familiar with how to ask R for certain rows and columns.  It's also important that you get in practice of refer to things by name, rather than by number.  You'd be surprised how many idiotic mistakes scientists make by not referring to something by name.
+It's important that you become familiar with how to ask R for certain rows and columns.  It's also important that you develop the habit of referring to things by name rather than by number.  You'd be surprised how many idiotic mistakes scientists make by not referring to something by name.
 
 
 An Introduction to Visualization
@@ -185,7 +186,7 @@ There are two primay graphing packages in R:
  - base
  - ggplot
  
-base is quick and dirty.  Out of the box, base produces ugly plots, but it can be simple to use.  With ggplot it is much easier to create beautiful plots that people will actually want to look at try to understand.  The NYTimes, which cares quite a bit about whether people want to look at it not (and even pay money to look at it), uses ggplot.  So that should indicate something.
+base is quick and dirty.  Out of the box, base produces ugly plots, but it can be simple to use.  With ggplot it is much easier to create beautiful plots that people will actually want to look at and try to understand.  The New York Times, which cares quite a bit about whether people want to look at it or not (and even to pay money to look at it), uses ggplot.  So that should indicate something.
 
 I'll show how to plot Male births and Female births using both the base package and the ggplot package.
 
@@ -215,17 +216,18 @@ Not very helpful.  We need color or dashes, or something:
 plot(arbuthnot$Year, arbuthnot$Males, type='l') 
 lines(x=arbuthnot$Year, y=arbuthnot$Females, col='red')
 ```
+The help file for plot will show you some of the options that you can use.
 
-That's about all I will show you from of base plotting, because that's about all I use if for:  Quick plotting.  I don't find that it meets the standards for reports or any other form of publication.
+That's about all I will show you of base plotting, because that's about all I use if for:  quick plotting.  I don't find that it meets the standards for reports or any other form of publication.
 
 
 
 ## ggplot
-We're going to use the ggplot2 package:
+We're going to use the ggplot2 package which is not loaded by default.  The following line loads in the package:
 ```{r}
 library(ggplot2)
 ```
-This section will have a lot of plotting commands with increasing complexity.  You can largely copy and paste them.  
+This section will have a lot of plotting commands with increasing complexity.  You can largely copy and paste them.  To see what functions are available in a package, you can type `help(package='ggplot2')`, but don't worry about this for now.
 
 The quick and dirty way of plotting with ggplot is the `qplot` fuction.  It's a lot like plot:
 ```{r}
@@ -235,10 +237,10 @@ qplot(arbuthnot$Year, arbuthnot$Males, geom='line')
 But qplot isn't where it's at in ggplot...
 
 ### The "grammar" of graphics: the 'gg' in ggplot
-Just like sentences are constructed from subjects, verbs and objects, a graphic has it's own grammar.  First, a graphic has "aesthetic," things we can perceive.  A graphic has:
+Just as sentences are constructed from subjects, verbs and objects, a graphic has it's own grammar.  A graphic has:
 
  - data
- - a linking (also called a mapping) from the data to an **aesthetic** (for example, will one variable be "x", another variable "y", another variable "color" etc?)  And aesthetic is something to see, and we need to link data to what we will see.
+ - a linking (also called a mapping) from the data to an **aesthetic** (for example, will one variable be "x", another variable "y", another variable "color", etc?)  An aesthetic is something to see with our eyes, and we need to link the data to what we can see.
  - geometric objects: such as points, lines, polygons,
  - scales: each aesthetic will need a scale.  how do you you know if something is higher or lower?  What do the colors mean? etc.
  - (less common) a coordinate system: cartesion coordinates, polar coordinates, etc.  
@@ -254,6 +256,8 @@ We can change the y-axis title.  The y-axis is a scale, and we want to rename it
 ggplot(data=arbuthnot) + geom_line(aes(x=Year, y=Males)) + 
   scale_y_continuous(name='Male Christenings')
 ```
+Remember, you can use `help()` to find out more about any of these functions.  If you look at the help for `scale_y_continuous` it will actually refer you to the help for `continuous_scale` in order to see all of the available options.
+
 
 There's a shortcut for axis labels:
 ```{r}
@@ -269,7 +273,7 @@ ggplot(data=arbuthnot) +
   geom_line(aes(x=Year, y=Females, color='Females')) + ylab('Christenings')
 ```
 
-ggplot noticed that we have two different lines and created a third aesthetic - color -  to keep them straight, but it didn't know what to call this third aesthetic.  We have three aesthetics: x, y, and color.  x and y have a continuous scale, and color has a discrete scale.  Let's fix the title of the color scale, we can do either `+ scale_color_discrete(name='Sex')` or use a shortcut `+ labs('Sex')`.
+ggplot noticed that we have two different lines and created a third aesthetic - color -  to keep them straight, but it didn't know what to call this third aesthetic.  Now we have three aesthetic mappings: x, y, and color.  x and y have a continuous scale, and color has a discrete scale.  Let's fix the title of the color scale: we can do either `+ scale_color_discrete(name='Sex')` or use a shortcut `+ labs('Sex')`.
 
 ```{r}
 ggplot(data=arbuthnot) + 
@@ -286,10 +290,10 @@ ggplot(data=arbuthnot) +
   geom_line(aes(x=Year, y=Females, color='Females'), size=2) + 
   ylab('Christenings') + labs('Sex')
 ```
-Note, that line size is outside of the aesthetic.  We're not going to use size to distinguish between the lines.  We could have, though....
+Note, that line size is outside of the aesthetic.  We're not going to use size to distinguish between the lines.  We could have, though.
 
 ### Plotting the sex ratio:
-Arbuthnot's question was: is the sex ratio of males and females even.  We might want to plot the ratio of males-to-females:
+Arbuthnot's question was: Is the sex ratio of males and females even.  We might want to plot the ratio of males-to-females:
 ```{r}
 ggplot(data=arbuthnot) + 
   geom_line(aes(x=Year, y=Males/Females))+ 
