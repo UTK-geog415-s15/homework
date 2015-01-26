@@ -2,7 +2,7 @@
 title: "test"
 author: "Nicholas Nagle"
 date: "January 26, 2015"
-output: html_document
+output: pdf_document
 ---
 # INSTRUCTIONS:
 Edit this file by replacing the instructions with text and code to anser the questions.
