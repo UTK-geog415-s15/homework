@@ -253,9 +253,25 @@ rwi.precip %&gt;% filter(month=='Jan') %$% cor(rwi, precip, use='complete.obs')<
 ## 10   Oct -0.061650
 ## 11   Nov  0.077797
 ## 12   Dec  0.175763</code></pre>
+<pre class="r"><code>rwi.precip %&gt;% group_by(month) %&gt;% summarise(r=cor(rwi, lag(precip), use='complete.obs'))</code></pre>
+<pre><code>## Source: local data frame [12 x 2]
+## 
+##    month         r
+## 1    Jan  0.400438
+## 2    Feb  0.315476
+## 3    Mar  0.304795
+## 4    Apr  0.248024
+## 5    May  0.277082
+## 6    Jun  0.281395
+## 7    Jul  0.113537
+## 8    Aug  0.255812
+## 9    Sep -0.004477
+## 10   Oct  0.088710
+## 11   Nov -0.061137
+## 12   Dec  0.076296</code></pre>
 </div>
-<div id="summary-of-dplyr" class="section level1">
-<h1>Summary of dplyr</h1>
+<div id="summary-of-dplyr-commands" class="section level1">
+<h1>Summary of dplyr commands</h1>
 <p>Here’s a listing of the data manipulation functions in dplyr:</p>
 <ul>
 <li><code>arrange</code>: arrange (sort) the data by row</li>
