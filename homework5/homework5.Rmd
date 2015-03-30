@@ -24,9 +24,8 @@ help(boston)
 head(boston.c)
 ```
 
-The most interesting values for us are: CMEDV, AGE, DIS, RAD, RM, and NOX.
-Economic theory suggests that each one of those should impact median value.
-
+Most of these variables were selected because Economic theory suggests that each should impact median value.  A scatterplot matrix is a helpful to quickly visualize many bivariate relations.  I like the scatterpot matrix function in the GGally package called `ggpairs`.
+Sorry it looks so bad printed out.  It's better on a big screen.
 ```{r, message=FALSE}
 library(ggplot2)
 library(GGally)
@@ -55,7 +54,7 @@ ggplot(boston.c) + geom_point(aes(x=X, y=Y, color=log(DIS)))
 1. Using the scatterplot matrix (`ggpairs`), 
  a. Describe the correlates of house price.
  b. Describe the correlates of NOX.
-2. Imagine the multivariate regression of log(CMEDV) on NOX, AGE, log(DIS), RM, CRIM, PTRATIO, B, LSTAT, and CHAS.  DO NOT RUN THE REGRESSION YET.  For each of these variables, predict whether you think the regression coefficient will be positive or negative, and why.  Remember, the multivariate regression relationship is the relationship AFTER you hold the other values fixed.  So, for instance to think about the relationship between Distance and value, you should think like: "Imagine two houses that have the same age, same number of rooms, same racial and ethnic neighborhood, same tax rate, etc.  Now move one of those houses farther from workplaces.  Should that change increase or decrease housing value."  Answer: Economic theory suggest that everything else equal, being far from work is a bad thing.
+2. Imagine the multivariate regression of log(CMEDV) on NOX, AGE, log(DIS), RM, CRIM, PTRATIO, B, LSTAT, and CHAS.  DO NOT RUN THE REGRESSION YET.  For each of these variables, predict whether you think the regression coefficient will be positive or negative, and why.  Remember, the multivariate regression relationship is the relationship AFTER you hold the other values fixed.  So, for instance to think about the relationship between Distance and value, you should think like: "Imagine two houses that have the same age, same number of rooms, same racial and ethnic neighborhood, same tax rate, etc.  Now move one of those houses farther from workplaces.  Should that change increase or decrease housing value."  Answer: Economic theory suggest that everything else equal, being far from work is a bad thing.  Note, the Charles River is a particulurly industrial part of town.
 3. One of the relationships is a negative relationship between Distance from Work (primarily Boston) and House Value.  Fit a bivariate regression between log CMEDV and log DIS
  a. Report the slope of this regression and interpret it's value.
  b. Report approximate 95% confidence intervals for the slope.
